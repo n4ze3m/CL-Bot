@@ -245,67 +245,55 @@ def finalCongrats(h,a,s1,s2,year):
     	who = str(year)+' 😍 UCL Final'+h[i]+' vs '+a[i]+ ' #UCLFinal'
     	api.update_status(status=who)
     	sleep(1800)
-        if s1[i]>s2[i]:
-            s = str(s1[i])+'-'+str(s2[i])
-            mes = str(year)+','+h[i]+' beat '+a[i]+' ('+s+') to win Champions League trophy 🏆 \n#UCLFinal'
-            print(mes)
-            api.update_status(status=mes)
-            sleep(150)
-            print()
-            s = str(s1[i])+'-'+str(s2[i])
-            ucl = '🏆 '+str(year)+' UCL FINAL RESULT🏆 \n'+h[i]+'⭐️ '+s+' '+a[i]+'\n#UCLFinal'
-            print(ucl)
-            path = '/1.jpeg'
-            api.update_status(status=ucl)
-            sleep(150)
-            cong = '😍🏆 Congratulations to '+ h[i]+' for winning the '+str(year)+' Champions League title \n#UCLFinal'
-            print(cong)
-            api.update_status(status=mes)
-            sleep(150)
-        elif s1[i]<s2[i]:
-            s = str(s2[i])+'-'+str(s1[i])
-            mes = str(year)+','+a[i]+' beat '+h[i]+' ('+s+') to win Champions League trophy 🏆 \n#UCLFinal'
-            print(mes)
-            api.update_status(status=mes)
-            sleep(150)
-            s = str(s1[i])+'-'+str(s2[i])
-            ucl = '🏆 '+str(year)+' UCL FINAL RESULT🏆 \n'+h[i]+' '+s+' ⭐️'+a[i]+'\n#UCLFinal'
-            print(ucl)
-            api.update_status(status=ucl)
-            sleep(150)
-            path = '/1.jpeg'
-            cong = '😍🏆 Congratulations to '+ a[i]+' for winning the '+str(year)+' Champions League title \n#UCLFinal'
-            api.update_status(status=cong)
-            print(cong)
-            sleep(150)
-        else:
-            #year = 2045
-            #s = str(s2[i])+'-'+str(s1[i])
-            t = randint(0,1)
-            if t == 0:
-                scr = ['5-3','4-2','5-4','3-2','6-5','4-3']
-                ran = randint(0,5)
-                mes = h[i]+' Beat '+a[i]+' '+scr[ran]+' on  penalties in the '+str(year)+' Champions League final 🏆 \n#UCLFinal'
-                print(mes)
-                api.update_status(status=mes)
-                sleep(150)
-                cong ='😍🏆 Congratulations to '+ h[i]+' for winning the '+str(year)+' Champions League title \n#UCLFinal'
-                path = '/1.jpeg'
-                api.update_status(status=cong)
-                print(cong)
-                sleep(150)
-            else:
-                scr = ['5-3','4-2','5-4','3-2','6-5','4-3']
-                ran = randint(0,5)
-                mes =  a[i]+' Beat '+h[i]+' '+scr[ran]+' on  penalties in the '+str(year)+' Champions League final 🏆 \n#UCLFinal'
-                print(mes)
-                api.update_status(status=mes)
-                sleep(150)
-                cong = '😍🏆 Congratulations to '+ a[i]+' for winning the '+str(year)+' Champions League title \n#UCLFinal'
-                path = '/1.jpeg'
-                api.update_status(status=cong)
-                print(cong)
-                sleep(150)
+    	if s1[i]>s2[i]:
+    		s = str(s1[i])+'-'+str(s2[i])
+    		mes = str(year)+','+h[i]+' beat '+a[i]+' ('+s+') to win Champions League trophy 🏆 \n#UCLFinal'
+    		print(mes)
+    		api.update_status(status=mes)
+    		sleep(150)
+    		s = str(s1[i])+'-'+str(s2[i])
+    		ucl = '🏆 '+str(year)+' UCL FINAL RESULT🏆 \n'+h[i]+'⭐️ '+s+' '+a[i]+'\n#UCLFinal'
+    		print(ucl)
+    		api.update_status(status=ucl)
+    		sleep(150)
+    		cong = '😍🏆 Congratulations to '+ h[i]+' for winning the '+str(year)+' Champions League title \n#UCLFinal'
+    		print(cong)
+    		api.update_status(status=mes)
+    		sleep(150)
+    	elif s1[i]<s2[i]:
+    		s = str(s2[i])+'-'+str(s1[i])
+    		mes = str(year)+','+a[i]+' beat '+h[i]+' ('+s+') to win Champions League trophy 🏆 \n#UCLFinal'
+    		api.update_status(status=mes)
+    		sleep(150)
+    		s = str(s1[i])+'-'+str(s2[i])
+    		ucl = '🏆 '+str(year)+' UCL FINAL RESULT🏆 \n'+h[i]+' '+s+' ⭐️'+a[i]+'\n#UCLFinal'
+    		print(ucl)
+    		api.update_status(status=ucl)
+    		sleep(150)
+    		cong = '😍🏆 Congratulations to '+ a[i]+' for winning the '+str(year)+' Champions League title \n#UCLFinal'
+    		api.update_status(status=cong)
+    		print(cong)
+    		sleep(150)
+    	else:
+    		t = randint(0,1)
+    		if t == 0:
+    			scr = ['5-3','4-2','5-4','3-2','6-5','4-3']
+    			ran = randint(0,5)
+    			mes = h[i]+' Beat '+a[i]+' '+scr[ran]+' on  penalties in the '+str(year)+' Champions League final 🏆 \n#UCLFinal'
+    			api.update_status(status=mes)
+    			sleep(150)
+    			cong ='😍🏆 Congratulations to '+ h[i]+' for winning the '+str(year)+' Champions League title \n#UCLFinal'
+    			api.update_status(status=cong)
+    			sleep(150)
+    		else:
+    			scr = ['5-3','4-2','5-4','3-2','6-5','4-3']
+    			ran = randint(0,5)
+    			mes =  a[i]+' Beat '+h[i]+' '+scr[ran]+' on  penalties in the '+str(year)+' Champions League final 🏆 \n#UCLFinal'
+    			api.update_status(status=mes)
+    			sleep(150)
+    			cong = '😍🏆 Congratulations to '+ a[i]+' for winning the '+str(year)+' Champions League title \n#UCLFinal'
+    			api.update_status(status=cong)
+    			sleep(150)
 print("BOT Started")
 print()
 for year in range(2054,8000):
