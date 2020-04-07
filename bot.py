@@ -1,65 +1,13 @@
-# git push --mirror https://github.com/NazeemNato/CL-Bot.git
-
-# https://en.wikipedia.org/wiki/UEFA_coefficient#Men's_Club_coefficient
-# Using current uefa coefficient rankings
-# England , Spain, Germany and Italy required teams
-# France and Portugal  70-30 chance
-
-# Fixtures post 
-# fixtures results requried to post after one hours
-
-# Round 16
-# No Same nations
-
-# Home and Away fixtures required 
-# Max goals 7 
-
-# Final one leg
 import tweepy
+from twitter_api import *
 from bs4 import BeautifulSoup
 from bs4.dammit import EncodingDetector
 import requests
 from random import choices,sample,randint
 from time import sleep
+from league_list import *
+from 
 header ={'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'}
-english_leagues = [
-    '/competition/eng-premier-league/',
- '/competition/eng-championship/'
-]
-
-german_leagues = [ 
-'/competition/bundesliga/',
- '/competition/2-bundesliga/'
-]
-
-spainsh_league = [
-    '/competition/esp-primera-division/',
- '/competition/esp-segunda-division/'
-]
-
-italian_leagues = [
-    '/competition/ita-serie-a/',
- '/competition/ita-serie-b/'
-]
-
-league_qlf_list = [
- '/competition/fra-ligue-1/',
-  '/competition/por-primeira-liga/',
-'/competition/den-superliga/',
-
-'/competition/bel-eerste-klasse-a/',
-
- '/competition/ukr-premyer-liga/',
-
- '/competition/ned-eredivisie/',
-    '/competition/rus-premier-liga/',
-
- '/competition/tur-sueperlig/'
-]
-API_KEY = 'MqLnjy2IPkyGt0MwsGuUTjNLI'
-API_SECRET = 'zh2FEz54xsBQqtMfWJzGa79RPyclCaa8jUiARbEDdONqHoGzyc'
-ACCESS_TOKEN = '1182714365381894144-b9VcV3ilO3ISpUeramAb4l0bWKXnQK'
-ACCESS_TOKEN_SECRET ='42n5JmQcRWARm8Gjzpx3Z3kxvz0ihGLXFk6rMY0ws8Euf'
 auth = tweepy.OAuthHandler(API_KEY, API_SECRET)
 auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
 api = tweepy.API(auth, wait_on_rate_limit=True,wait_on_rate_limit_notify=True)
@@ -67,11 +15,8 @@ def top4leagues(leagueList,index):
     rangeOfWork = team_qulfied[index]
     defaultLst = []
     temIndex = sample(range(12),rangeOfWork)
-    #print(rangeOfWork)
-    #print(temIndex)
     for i in range(rangeOfWork):
         clubsIndex = randint(0,1)
-        #print(clubsIndex)
         try:
             tempClubsLst = []
             url = 'https://www.worldfootball.net'+leagueList[clubsIndex]
@@ -102,9 +47,6 @@ def otherTeams(sumOfQ):
         randomTeams = sample(range(10),remainigTeams)
         randomTeamsIndex = sample(range(remainigTeams+2),remainigTeams)
         randomTeamSelection = choices(range(len(league_qlf_list)),k=remainigTeams)
-        #print(randomTeams)
-        #print(randomTeamsIndex)
-        #print(randomTeamSelection)
         for i in range(0,remainigTeams):
             temp_x = randomTeamSelection[i]
             try:
@@ -144,7 +86,7 @@ def vsPrint(year,home,away,n):
         mes = str(year)+' UCL - Round of 16\n\n'
         f1 = '[1/2] '+tag
         c = ''.join(map(str, apndLst[0:4]))
-        print(mes+c+f1) # Change that to tweepy status update
+        print(mes+c+f1)
         api.update_status(status=mes+c+f1)
         sleep(100) # change that to 30 sec afther finishing
         f2 ='[2/2] '+tag
@@ -331,7 +273,9 @@ def finalCongrats(h,a,s1,s2,year):
     			api.update_status(status=cong)
     			sleep(150)
 print("BOT Started")
-print()
+# BOT will scrap teams names from worldfootball.net
+# using data list will choice sum of list of numbers between 4 to 16
+# bot will tweet full time scores R16,Q,SF and Final
 for year in range(2054,8000):
 	try:
 		data = [1,2,3,4]
