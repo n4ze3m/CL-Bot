@@ -22,6 +22,44 @@ import requests
 from random import choices,sample,randint
 from time import sleep
 header ={'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'}
+english_leagues = [
+    '/competition/eng-premier-league/',
+ '/competition/eng-championship/'
+]
+
+german_leagues = [ 
+'/competition/bundesliga/',
+ '/competition/2-bundesliga/'
+]
+
+spainsh_league = [
+    '/competition/esp-primera-division/',
+ '/competition/esp-segunda-division/'
+]
+
+italian_leagues = [
+    '/competition/ita-serie-a/',
+ '/competition/ita-serie-b/'
+]
+
+league_qlf_list = [
+ '/competition/fra-ligue-1/',
+  '/competition/por-primeira-liga/',
+'/competition/den-superliga/',
+
+'/competition/bel-eerste-klasse-a/',
+
+ '/competition/ukr-premyer-liga/',
+
+ '/competition/ned-eredivisie/',
+    '/competition/rus-premier-liga/',
+
+ '/competition/tur-sueperlig/'
+]
+API_KEY = 'MqLnjy2IPkyGt0MwsGuUTjNLI'
+API_SECRET = 'zh2FEz54xsBQqtMfWJzGa79RPyclCaa8jUiARbEDdONqHoGzyc'
+ACCESS_TOKEN = '1182714365381894144-b9VcV3ilO3ISpUeramAb4l0bWKXnQK'
+ACCESS_TOKEN_SECRET ='42n5JmQcRWARm8Gjzpx3Z3kxvz0ihGLXFk6rMY0ws8Euf'
 auth = tweepy.OAuthHandler(API_KEY, API_SECRET)
 auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
 api = tweepy.API(auth, wait_on_rate_limit=True,wait_on_rate_limit_notify=True)
@@ -294,44 +332,6 @@ def finalCongrats(h,a,s1,s2,year):
     			sleep(150)
 print("BOT Started")
 print()
-english_leagues = [
-    '/competition/eng-premier-league/',
- '/competition/eng-championship/'
-]
-
-german_leagues = [ 
-'/competition/bundesliga/',
- '/competition/2-bundesliga/'
-]
-
-spainsh_league = [
-    '/competition/esp-primera-division/',
- '/competition/esp-segunda-division/'
-]
-
-italian_leagues = [
-    '/competition/ita-serie-a/',
- '/competition/ita-serie-b/'
-]
-
-league_qlf_list = [
- '/competition/fra-ligue-1/',
-  '/competition/por-primeira-liga/',
-'/competition/den-superliga/',
-
-'/competition/bel-eerste-klasse-a/',
-
- '/competition/ukr-premyer-liga/',
-
- '/competition/ned-eredivisie/',
-    '/competition/rus-premier-liga/',
-
- '/competition/tur-sueperlig/'
-]
-API_KEY = 'MqLnjy2IPkyGt0MwsGuUTjNLI'
-API_SECRET = 'zh2FEz54xsBQqtMfWJzGa79RPyclCaa8jUiARbEDdONqHoGzyc'
-ACCESS_TOKEN = '1182714365381894144-b9VcV3ilO3ISpUeramAb4l0bWKXnQK'
-ACCESS_TOKEN_SECRET ='42n5JmQcRWARm8Gjzpx3Z3kxvz0ihGLXFk6rMY0ws8Euf'
 for year in range(2054,8000):
 	try:
 		data = [1,2,3,4]
