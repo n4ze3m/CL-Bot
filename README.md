@@ -1,6 +1,7 @@
 # The `UCL ⚽️` Bot
 
 Bot that scarp 16 random team from Europe top leagues and predict future results.
+fun bot
 
 ## Current `Features` 😵
 
